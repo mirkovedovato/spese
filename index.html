@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- interactive-widget=resizes-content: su Chrome Android la tastiera
+         ridimensiona il layout viewport, così bottom sheet e nav fixed non
+         finiscono coperti (CP5d F3). user-scalable=no rimosso: bloccava il
+         pinch-zoom (anti-pattern a11y); l'auto-zoom-on-focus iOS è prevenuto
+         alzando gli input a 16px, non sopprimendo lo zoom utente. -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content"
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <link rel="icon" href="./icons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+    <title>Household</title>
+    <!-- Tema prima del primo paint (chiave e valori: src/stores/themeStore.ts). -->
+    <script>
+      try {
+        var t = localStorage.getItem('household.theme.v1');
+        if (t === 'light' || t === 'dark' || t === 'contrast') document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="./assets/index-B6eOSh84.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Cwuxza9L.css">
+  <link rel="manifest" href="./manifest.webmanifest"></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
